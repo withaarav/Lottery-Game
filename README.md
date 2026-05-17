@@ -1,26 +1,105 @@
-# Lottery Spinner Game
+# 🎰 Lottery Game
 
-Genre: Interactive Luck-based Game
+> A browser-based betting game with a spinning wheel, sound effects, and real stakes — built in vanilla HTML, CSS, and JavaScript.
 
-Description:
-The Lottery Spinner Game is an engaging, luck-based game that combines the thrill of betting with the suspense of a spinning wheel. Players start with $2000 and place bets on numbers from 0 to 9 using interactive sliders. Once bets are placed, the spinner comes to life, accompanied by sound effects, creating an immersive experience as players wait to see if their chosen number will land. If their number matches, they win nine times their bet, giving them the chance to grow their in-game balance.
+Start with $2000. Spread your bets across numbers 0–9 using sliders. Hit "Place Bet", watch the wheel spin, and either hear the cha-ching or the 8-bit lose sound. Simple, addictive, and built entirely from scratch.
 
-The game includes interactive colour-changing number blocks that react dynamically to player interaction, adding a visually stimulating element to the gameplay. A series of sounds further heightens the excitement, with a spinner sound while the wheel spins, a celebratory sound for winning, and a different tone for losing.
+---
 
-The game is simple to play, yet addictive, as it challenges players to manage their bets wisely while hoping for a lucky break. The balance tracker ensures players can easily see how their bets impact their starting budget.
+## 🎯 What It Does
 
-Key Features:
+You allocate your balance across any combination of numbers using sliders, place your bet, and a spinning wheel randomly picks the winner. Land on your number and you get **9× your bet** back. Miss and you lose what you wagered.
 
-Interactive Number Blocks: Blue-colored blocks that change colour when sliders are adjusted, enhancing the user experience.
-Dynamic Sound Effects: Includes a spinner sound while the wheel spins, a victory sound for winning, and a losing sound for missed bets.
-Betting System: Players can wager up to $500 per number and start with a balance of $2000.
-Exciting Gameplay: The game combines strategy (betting) with randomness, offering a fun and thrilling experience.
-Stunning Visuals: The game features a sleek, modern design with a spinning wheel and interactive blocks.
-Target Audience:
-This game appeals to those who enjoy casual games, casino-style luck games, or simply interactive, visually engaging challenges. It is suitable for all ages and provides a fun, low-stakes gambling experience in a completely virtual environment.
+---
 
-Platform:
-Browser-based game, suitable for desktop and mobile devices.
+## ✨ Features
 
-Developer’s Note:
-Lottery Spinner Game was designed to bring an exciting, immersive, and lighthearted betting experience to users, blending visual and auditory stimuli to keep the gameplay exciting. Each spin is unpredictable, making it a game of both chance and anticipation!
+- 🎡 Animated spinning wheel with 10 segments (0–9)
+- 🎚 Per-number bet sliders — bet on as many numbers as you want simultaneously
+- 💵 Live balance tracker — updates after every round
+- 🔊 Sound effects: win sound, lose sound, and spinner sound during the spin
+- ⚠️ Warning system — prevents invalid bets (overbetting your balance)
+- 🎨 Styled with a dark overlay on a custom background image
+
+---
+
+## 🛠 Tech Stack
+
+| | |
+|---|---|
+| Structure | HTML5 |
+| Styling | CSS3 (conic-gradient wheel, animations) |
+| Logic | Vanilla JavaScript |
+| Audio | HTML `<audio>` API |
+
+---
+
+## 📂 Project Structure
+
+```
+Lottery-Game/
+├── index.html          # Game layout and wheel
+├── styles.css          # Grid, blocks, wheel styling
+├── script.js           # Bet logic, spin animation, win/loss calculation
+├── background.jpg      # Background image
+├── tomato.png          # (if present)
+├── cha-ching-7053.mp3          # Win sound
+├── spinner-sound-36693.mp3     # Spin sound
+└── 8-bit-video-game-lose-sound-version-1-145828.mp3  # Lose sound
+```
+
+---
+
+## 🚀 How to Run
+
+No install needed. Just:
+
+1. Clone or download the repo
+2. Open `index.html` in any browser
+
+```bash
+git clone https://github.com/withaarav/Lottery-Game.git
+cd Lottery-Game
+open index.html   # Mac
+# or double-click index.html on Windows
+```
+
+---
+
+## 💡 How It Works
+
+### Betting
+Each number (0–9) has a slider capped at $500. You can bet on multiple numbers at once — the total across all sliders is deducted from your balance when you place the bet.
+
+### Spinning
+The wheel spins with a CSS rotation animation, landing on a randomly generated number (0–9). The arrow at the top points to the result.
+
+### Payouts
+- **Win:** if the wheel lands on a number you bet on → you receive `bet × 9`
+- **Loss:** if no match → you lose your total wagered amount
+- **Expected value:** −10% per round (house edge built in — 9× payout on a 1-in-10 game)
+
+---
+
+## 🧠 What I Learned
+
+- Building interactive UIs with only vanilla JS — no frameworks
+- Using CSS `conic-gradient` to create a styled pie/wheel
+- Triggering and controlling CSS animations from JavaScript
+- Managing game state (balance, bets, results) purely in the browser
+- Integrating the HTML Audio API for event-based sound effects
+
+---
+
+## 🔮 What's Next
+
+- [ ] Persist balance across sessions with localStorage
+- [ ] Add a spin history / last 10 results tracker
+- [ ] Mobile-responsive layout
+- [ ] Multiplayer mode
+
+---
+
+## 📬 Contact
+
+Made by [Aarav Porwal](https://github.com/withaarav) · with.aarav@gmail.com
